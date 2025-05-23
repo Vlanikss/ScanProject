@@ -1,0 +1,207 @@
+// src/pages/SearchPage/SearchPage.module.scss
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+.searchContent {
+	width: 100%;
+	padding-top: 123px;
+	max-width: 1440px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 0 auto 60px;
+}
+
+.h1SearchPage {
+	font-size: 40px;
+}
+
+.pSearchPageTitleBlock {
+	font-size: 20px;
+	padding-top: 30px;
+}
+
+.searchTitleBlock {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	margin-right: 60px;
+	margin-left: 60px;
+}
+
+.searchPageSmallPictureSheet {
+	margin-left: 110px;
+}
+
+.searchPageSmallPictureFolders {
+	margin-right: 30px;
+}
+
+.searchBlock {
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	margin-right: 0;
+	margin-left: 60px;
+}
+
+.searchForm {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	width: 872px;
+	height: 543px;
+	padding: 10px 20px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 var(--scan-shadow);
+}
+
+.button {
+	@include button;
+	width: 305px;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+
+.leftPartSearchForm {
+	width: 435px;
+	padding: 20px;
+}
+
+.rightPartSearchForm {
+	display: flex;
+	flex-direction: column;
+	width: 435px;
+	padding: 20px 20px 20px 0;
+}
+
+.rightPartSubmitButtonBlock {
+	justify-content: right;
+	align-items: center;
+	margin-top: 138px;
+	margin-left: 40px;
+}
+
+.starMessage {
+	text-align: left;
+	color: var(--scan-light-green);
+	font-size: 14px;
+	margin-left: 30px;
+	
+}
+
+.requiredAsterisk {
+	color: var(--scan-black);
+	font-family: InterRegular, sans-serif;
+	font-size: 25px;
+}
+
+.requiredAsterisk.error {
+	color: var(--scan-red);
+	font-family: InterRegular, sans-serif;
+	font-size: 25px;
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+	.searchContent {
+		padding: 100px;
+		max-width: 375px;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+
+	.button {
+		@include button;
+		margin-left: 10px;
+		margin-bottom: 20px;
+	}
+
+	.h1SearchPage {
+		font-size: 28px;
+	}
+
+	.pSearchPageTitleBlock {
+		font-size: 18px;
+		padding-top: 20px;
+	}
+
+	.searchTitleBlock {
+		display: flex;
+		justify-content: center;
+		align-items: end;
+		max-width: 357px;
+		margin-right: 14px;
+		margin-left: 14px;
+	}
+
+	.searchPageSmallPictureSheet {
+		margin-bottom: 80px;
+		margin-left: 0;
+		width: 58.24px;
+		height: 71.12px;
+	}
+
+	.searchPageSmallPictureFolders {
+		display: none;
+	}
+
+	.searchBlock {
+		margin-top: 10px;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin-right: 14px;
+		margin-left: 14px;
+	}
+
+	.searchForm {
+		display: flex;
+		flex-direction: column;
+		width: 375px;
+		height: 688px;
+		padding: 0 26px 0 14px;
+	}
+
+	.leftPartSearchForm {
+		width: 335px;
+		padding: 10px;
+		margin-bottom: -20px;
+	}
+
+	.formField input[type="text"],
+	.formField input[type="date"],
+	.formField input[type="number"],
+	.formField option,
+	.formField select {
+		width: 305px;
+	}
+
+	.formField .errorMessage {
+		width: 305px;
+	}
+
+	.rightPartSearchForm {
+		display: flex;
+		flex-direction: column;
+		width: 335px;
+		padding: 0 26px 0 14px;
+	}
+
+	.rightPartSubmitButtonBlock {
+		justify-content: center;
+		align-items: center;
+		margin-top: 0;
+		margin-left: -14px;
+	}
+
+	.searchPageLargePicture {
+		height: 403.28px;
+		margin-left: 25px;
+		margin-top: 25px;
+	}
+}

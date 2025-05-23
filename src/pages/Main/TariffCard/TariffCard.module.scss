@@ -1,0 +1,257 @@
+// TariffCard.module.scss
+@import '../../../styles/_variables';
+@import '../../../styles/_mixins';
+
+.tariffCard {
+	width: 415px;
+	height: 540px;
+	max-height: 540px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 var(--scan-shadow);
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tariffCard__tariffColoredBlock {
+	max-height: 132px;
+	width: 100%;
+	padding: 15px;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.tariffCard__tariffNameBlock {
+	margin: 30px 10px 10px;
+}
+
+.tariffCard__tariffNameBlock h3 {
+	margin: 0;
+	color: var(--scan-black);
+	font-family: 'InterMedium', sans-serif;
+	font-size: 30px;
+}
+
+.tariffCard__tariffNameBlock p {
+	color: var(--scan-black);
+	font-size: 16px;
+	white-space: nowrap;
+	max-width: 90%;
+}
+
+.tariffCard__tariffIconBlock {
+	max-width: 100px;
+	max-height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tariffCard__tariffIcon {
+	width: auto;
+	height: auto;
+}
+
+.tariffCard__tariffCardTextBlock {
+	align-self: flex-start;
+	width: 100%;
+	height: 80px;
+	padding-left: 30px;
+}
+
+.tariffCard__yourTariffBlock {
+	min-height: 60px;
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	padding-right: 12px;
+	margin-bottom: -10px;
+}
+
+.tariffCard__yourTariffBadge {
+	width: 134px;
+	height: 24px;
+	background-color: var(--scan-tariff-badge);
+	border-radius: 10px;
+	color: var(--scan-black);
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tariffCard__tariffPriceBlock {
+	margin-bottom: 30px;
+}
+
+.tariffCard__tariffPrices {
+	display: flex;
+	align-items: baseline;
+	gap: 20px;
+}
+
+.tariffCard__tariffPrices h3 {
+	color: var(--scan-black);
+	font-family: 'InterMedium', sans-serif;
+	font-size: 30px;
+}
+
+.tariffCard__lastPriceTag {
+	text-decoration: line-through;
+	font-family: 'InterMedium', sans-serif;
+	font-size: 25px;
+	color: var(--scan-grey);
+}
+
+.tariffCard__tariffPrices h3,
+.tariffCard__lastPriceTag {
+	margin: 0;
+}
+
+.tariffCard__cardText {
+	color: var(--scan-black);
+	font-size: 18px;
+}
+
+.tariffCard__cardText20px {
+	font-size: 20px;
+	font-family: 'InterMedium', sans-serif;
+	margin-left: -10px;
+}
+
+.tariffCard__installmentText {
+	margin-top: -30px;
+	font-size: 18px;
+}
+
+.tariffCard__tariffToIncludeLines {
+	display: flex;
+	font-family: 'InterRegular', sans-serif;
+	font-size: 18px;
+	align-items: center;
+}
+
+.tariffCard__greenCheckbox {
+	margin-right: 10px;
+	width: 24px;
+	height: auto;
+}
+
+.tariffCard__tariffButtonDiv {
+	margin-top: 70px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+
+}
+
+.tariffCard__buttonTariffs {
+	width: 335px;
+	height: 59px;
+	border-radius: 5px;
+	font-family: 'InterRegular', sans-serif;
+	font-size: 22px;
+	color: var(--scan-white);
+	background-color: var(--scan-blue);
+	border: none;
+	transition: background-color 0.3s ease;
+}
+
+.tariffCard__grey {
+	background-color: var(--scan-grey);
+	color: var(--scan-black);
+}
+
+.tariffCard__buttonTariffs:not(:disabled):hover {
+	cursor: pointer;
+	background-color: var(--scan-light-blue);
+	color: var(--scan-black);
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+	.tariffCard {
+		width: 335px;
+		min-width: 335px;
+		height: 512px;
+		max-height: 512px;
+	}
+
+	.tariffCard__tariffColoredBlock {
+		width: 335px;
+		height: 132px;
+		padding: 15px;
+	}
+
+	.tariffCard__yourTariffBlock {
+		min-height: 60px;
+		width: 100%;
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		padding-right: 12px;
+		margin-bottom: -10px;
+	}
+
+	.tariffCard__tariffNameBlock h3 {
+		font-size: 20px;
+		margin-bottom: 22px;
+	}
+
+	.tariffCard__tariffNameBlock p {
+		font-size: 16px;
+		margin-bottom: 22px;
+	}
+
+	.tariffCard__tariffIconBlock {
+		width: 80px;
+		height: 80px;
+		margin-bottom: 60px;
+	}
+
+	.tariffCard__tariffCardTextBlock {
+		margin-bottom: 20px;
+	}
+
+	.tariffCard__tariffCardTextBlock {
+		padding-left: 20px;
+		min-height: 70px;
+	}
+
+	.tariffCard__cardText {
+		font-size: 16px;
+	}
+
+	.tariffCard__cardText20px {
+		font-size: 18px;
+		margin-left: 20px;
+	}
+
+	.tariffCard__installmentText {
+		width: 90%;
+		font-size: 16px;
+	}
+
+	.tariffCard__tariffToIncludeLines {
+		display: flex;
+		font-family: 'InterRegular', sans-serif;
+		font-size: 18px;
+		align-items: center;
+	}
+
+	.tariffCard__tariffButtonDiv {
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+
+	.tariffCard__buttonTariffs {
+		width: 287px;
+		height: 59px;
+		font-size: 18px;
+	}
+}

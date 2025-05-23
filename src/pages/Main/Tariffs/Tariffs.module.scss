@@ -1,0 +1,56 @@
+// Tariffs.module.scss
+@import '../../../styles/_variables';
+@import '../../../styles/_mixins';
+
+.tariffs {
+	background-color: var(--scan-white);
+	padding: 0 60px;
+	max-width: 1440px;
+	margin: 0 auto 100px;
+
+	&__cards {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-left: -20px;
+		margin-right: -20px;
+
+		.TariffBeginnerYellowActive {
+			border: 2px solid var(--scan-yellow);
+		}
+
+		.TariffProGreenActive {
+			border: 2px solid var(--scan-light-blue);
+		}
+
+		.TariffBusinessBlackActive {
+			border: 2px solid var(--scan-black);
+		}
+
+		.TariffBeginnerYellow {
+			background-color: var(--scan-yellow);
+		}
+
+		.TariffProGreen {
+			background-color: var(--scan-green-pro);
+		}
+
+		.TariffBusinessBlack {
+			background-color: var(--scan-black);
+		}
+	}
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+	.tariffs {
+		padding: 0 14px;
+		max-width: 375px;
+		margin-bottom: 30px;
+
+		&__cards {
+			flex-direction: column;
+
+		}
+	}
+}

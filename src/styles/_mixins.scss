@@ -1,0 +1,85 @@
+// _mixins.scss
+
+// миксин для мобильных устройств
+@mixin mobile {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+
+// Миксин для планшетов
+@mixin tablet {
+	@media (min-width: 768px) and (max-width: 1024px) {
+		@content;
+	}
+}
+
+// Миксин для небольших ноутбуков
+@mixin small-laptop {
+	@media (min-width: 1025px) and (max-width: 1366px) {
+		@content;
+	}
+}
+
+// Миксин для больших ноутбуков и настольных мониторов
+@mixin desktop {
+	@media (min-width: 1367px) {
+		@content;
+	}
+}
+
+// миксин для кнопок
+@mixin button($width: 335px, $height: 59px, $border-radius: 5px, $font-family: 'InterRegular', $font-size: 22px, $background-color: var(--scan-blue), $color: var(--scan-white), $hover-background-color: var(--scan-light-blue), $hover-color: var(--scan-black)) {
+	width: $width;
+	height: $height;
+	border-radius: $border-radius;
+	font-family: $font-family;
+	font-size: $font-size;
+	color: $color;
+	background-color: $background-color;
+	border: none;
+	transition: background-color 0.3s ease;
+
+	&:hover:not(:disabled) {
+		cursor: pointer;
+		background-color: $hover-background-color;
+		color: $hover-color;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
+}
+
+@media (max-width: 1360px) {
+	// Изменение размера шрифта кнопок при разрешении экрана до 1360px
+	.button {
+		font-size: 20px;
+	}
+}
+
+// миксин для скрывания стрелок даты
+// Скрывает стрелку для всех браузеров
+@mixin hide-arrow() {
+	// Скрывает стрелку для Chrome и Safari
+	input[type="date"]::-webkit-calendar-picker-indicator {
+		display: none;
+	}
+
+	// Скрывает стрелку для IE и Edge
+	input[type="date"]::-ms-clear {
+		display: none;
+	}
+
+	// Общий способ скрытия стрелок для всех элементов ввода
+	input[type="date"]::-webkit-inner-spin-button,
+	input[type="date"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	// Для Firefox, если предыдущие методы не работают
+	input[type="date"] {
+		-moz-appearance: textfield;
+	}
+}

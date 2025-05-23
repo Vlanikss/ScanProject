@@ -1,0 +1,122 @@
+// About.module.scss
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
+
+.aboutBlock {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 60px;
+	max-width: 1440px;
+}
+
+.aboutBlock__info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.aboutBlock__h1 {
+	width: 743px;
+	height: 288px;
+}
+
+.aboutBlock__p {
+	width: 534px;
+	height: 48px;
+	margin-top: 20px;
+	margin-bottom: 80px;
+}
+
+.aboutBlock__image {
+	margin-left: -30px;
+	margin-top: 15px;
+	width: 629px;
+	height: auto;
+}
+
+
+.aboutBlock__button {
+	@include button($width: 335px, $height: 59px, $font-size: 22px);
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+	.aboutBlock {
+		flex-direction: column;
+		padding: 0 14px;
+		max-width: 375px;
+	}
+
+	.aboutBlock__info {
+		margin-bottom: 14px;
+	}
+
+	.aboutBlock__h1 {
+		width: 360px;
+		height: 150px;
+	}
+
+	.aboutBlock__p {
+		width: 310px;
+		height: 66px;
+		margin-top: -10px;
+		margin-bottom: 30px;
+		font-size: 18px;
+	}
+
+	.aboutBlock__image {
+		margin-left: 14px;
+		width: 347px;
+		height: auto;
+	}
+
+	.aboutBlock__button {
+		@include button($width: 335px, $height: 59px, $font-size: 20px);
+	}
+}
+
+@include small-laptop {
+	.aboutBlock__h1 {
+		width: 643px;
+		height: auto;
+	}
+
+	.aboutBlock__p {
+		width: 483px;
+		height: auto;
+	}
+
+	.aboutBlock__image {
+		width: 480px;
+		height: auto;
+	}
+}
+
+
+
+@include tablet {
+	.aboutBlock__h1 {
+		font-size: 30px;
+		width: 543px;
+		height: auto;
+	}
+
+	.aboutBlock__p {
+		width: 343px;
+		height: auto;
+		padding: 30px 0 0 0;
+	}
+
+	.aboutBlock__image {
+		width: 409px;
+		height: auto;
+	}
+
+	.aboutBlock__info {
+		max-width: 100%;
+	}
+}
+

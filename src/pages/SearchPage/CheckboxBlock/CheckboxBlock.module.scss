@@ -1,0 +1,53 @@
+// CheckboxBlock.module.scss
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
+
+.rightPartSearchCheckboxBlock {
+  width: 406px;
+  height: 244px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rightPartSearchCheckboxBlock label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  color: var(--scan-light-green);
+}
+
+.rightPartSearchCheckboxBlock input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.customCheckbox {
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--scan-light-green);
+  cursor: pointer;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.checkboxContainer input[type="checkbox"]:checked + label .customCheckbox {
+  background-image: url('./../../../assets/checkbox_icon.svg');
+  border: 2px solid var(--scan-black);
+}
+
+.checkboxContainer input[type="checkbox"]:checked + label .labelText {
+  color: var(--scan-black);
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+  .rightPartSearchCheckboxBlock {
+    display: none;
+  }
+}

@@ -1,0 +1,78 @@
+// ResultsPage.module.scss
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+.resultPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--scan-white);
+    //padding-top: 123px;
+    max-width: 1440px;
+    //flex-grow: 1;
+    //margin: 0 auto 60px;
+    padding: 123px 60px 60px 60px;
+}
+
+.error {
+    padding: 400px 0 30px 0;
+    font-size: 30px;
+    margin-left: 100px;
+}
+
+.resultPage__titleBlock_h1 {
+    font-size: 40px;
+}
+
+.resultPage__titleBlock_p {
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.resultPage__titleBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.resultPage__largePicture {
+    height: 369px;
+    margin-bottom: -40px;
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+    .resultPage {
+        max-width: 375px;
+        margin-bottom: 40px;
+    }
+
+    .resultPage__titleBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0px;
+        margin-right: 14px;
+        margin-left: 14px;
+    }
+
+    .resultPage__titleBlock_h1 {
+        font-size: 28px;
+    }
+
+    .resultPage__titleBlock_p {
+        font-size: 18px;
+        padding-top: 5px;
+    }
+
+    .resultPage__largePicture {
+        height: 233.73px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
+}

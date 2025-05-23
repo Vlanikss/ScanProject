@@ -1,0 +1,179 @@
+// Header.module.scss
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	width: 100%;
+	background-color: var(--scan-white);
+}
+
+.header__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 93px;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 4%;
+	font-size: 14px;
+}
+
+.header__verticalDivider {
+	box-sizing: content-box;
+	flex: 0 0 2px;
+	height: 26px;
+	background-color: var(--scan-green);
+	border: none;
+	opacity: 0.6;
+	margin-right: 20px;
+	margin-left: 20px;
+	z-index: 1;
+}
+
+.header__rightSection {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: auto;
+	padding-right: 4%;
+}
+
+.header__regBlock {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 0 0 251px;
+}
+
+.header__regLink {
+	text-decoration: none;
+	color: var(--scan-shadow-light-grey);
+	margin-right: 10px;
+
+	&:hover {
+		text-decoration: underline;
+		color: var(--scan-black);
+	}
+}
+
+.header__loginButton {
+	width: 65px;
+	flex: 0 0 65px;
+	height: 26px;
+	border-radius: 5px;
+	background-color: var(--scan-green-pro);
+	border: none;
+	transition: background-color 0.3s ease;
+}
+
+.header__logo {
+	width: 141px;
+	align-items: center;
+	margin-right: 190px;
+}
+
+.header__logo_menuIcon {
+	display: none;
+	cursor: pointer;
+	width: 30px;
+	height: 25px;
+}
+
+.header__dropdownMenu {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 370px;
+	max-width: 100%;
+	height: 100vh;
+	background-color: var(--scan-green);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 120px;
+	z-index: 2000;
+	overflow-y: auto;
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+	.header__content {
+		max-width: 375px;
+		padding: 0 14px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.header__logo_menuIcon {
+		display: block;
+		margin-left: auto;
+		z-index: 2100;
+	}
+
+	.header__logo {
+		width: 111px;
+		margin-right: 0;
+		z-index: 2100;
+	}
+
+	.header__regBlock {
+		margin-top: 80px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.header__regLink {
+		color: rgb(255, 255, 255, 0.3);
+		font-size: 16px;
+
+		&:hover {
+			color: var(--scan-white);
+		}
+	}
+
+	.header__loginButton {
+		width: 295px;
+		flex: 0 0 65px;
+		height: 26px;
+		border-radius: 5px;
+		background-color: var(--scan-light-blue);
+		border: none;
+		transition: background-color 0.3s ease;
+	}
+}
+
+@include tablet {
+	.header__content {
+		height: 93px;
+	}
+
+	.header__logo {
+		width: 111px;
+		padding: 0 0 0 14px;
+	}
+
+	.header__rightSection {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+}
+
+@include small-laptop {
+	.header__content {
+		height: 93px;
+	}
+
+	.header__rightSection {
+
+		width: 40vw;
+	}
+}
+
+

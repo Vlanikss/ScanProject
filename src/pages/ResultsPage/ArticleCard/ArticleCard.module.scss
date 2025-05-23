@@ -1,0 +1,152 @@
+// ArticleCard.module.scss
+@import '../../../styles/_variables';
+@import '../../../styles/_mixins';
+
+.articleCard {
+	width: 630px;
+	height: 694px;
+	padding: 30px;
+	box-shadow: 0 0 10px 0 var(--scan-shadow);
+	border-radius: 10px;
+}
+
+.articleInfo {
+	display: flex;
+	justify-content: left;
+	margin-bottom: 10px;
+}
+
+.articleDate,
+.articleSource {
+	font-size: 16px;
+	color: var(--scan-light-green);
+}
+
+.articleSource {
+	text-decoration: underline;
+	cursor: pointer;
+	margin-left: 30px;
+}
+
+.articleTitle {
+	font-size: 26px;
+	font-family: "InterMedium", sans-serif;
+	margin-bottom: 10px;
+	min-height: 120px;
+}
+
+.tag {
+	width: 157px;
+	height: 22px;
+	border-radius: 5px;
+	font-size: 12px;
+	font-family: "InterRegilar", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 15px;
+	background-color: var(--scan-yellow);
+}
+
+.articlePicture {
+	min-width: 581px;
+	min-height: 158px;
+	max-width: 581px;
+	max-height: 158px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.articleContent {
+	font-family: "InterRegular", sans-serif;
+	font-size: 16px;
+	min-height: 175px;
+	max-height: 175px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 10;
+	-webkit-box-orient: vertical;
+	opacity: 0.5;
+	margin-bottom: 20px;
+}
+
+.articleFooter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.readMore {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--scan-light-blue);
+	color: var(--scan-black);
+	width: 223px;
+	height: 46.54px;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.readMore:hover {
+	cursor: pointer;
+	background-color: var(--scan-yellow);
+	color: var(--scan-black);
+}
+
+.wordCount {
+	font-size: 16px;
+	opacity: 0.5;
+	margin-top: 15px;
+}
+
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
+	.articleCard {
+		width: 345px;
+		height: 694px;
+		padding: 14px;
+	}
+
+	.articleDate,
+	.articleSource {
+		font-size: 14px;
+	}
+
+	.articleSource {
+		margin-left: 10px;
+	}
+
+	.articleTitle {
+		font-size: 19px;
+		margin-bottom: 20px;
+		min-height: 100px;
+	}
+
+	.articlePicture {
+		min-width: 315px;
+		min-height: 158px;
+		max-width: 315px;
+		max-height: 158px;
+	}
+
+	.articleContent {
+		font-size: 12px;
+		min-height: 220px;
+		max-height: 220px;
+		width: 315px;
+		-webkit-line-clamp: 10;
+	}
+
+	.readMore {
+		width: 195px;
+		height: 40.7px;
+		font-size: 14px;
+	}
+
+	.wordCount {
+		font-size: 14px;
+		margin-top: 26px;
+	}
+}
